@@ -92,7 +92,8 @@ sub compressFastq{
 
 sub usage{
   "$0: compresses fastq
-  Usage: cat fastq | $0 > fastq.kz
+  Usage: cat fastq | $0 | gzip -c > fastq.kz
+         zcat fastq.kz | $0 -d > fastq
   --help   This useful help menu
   --decompress
   "
