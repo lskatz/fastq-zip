@@ -39,3 +39,11 @@ Finally, reading the next `2320557` characters will return all the qual data.
 * Sequences are separated by newlines
 * Qual lines are separated by newlines
 
+## Advantages
+
+My test fastq file compresses to 2.4M but this fastq.kz file compresses to 2.2M.  So a slight improvement on space.
+
+## Disadvantages
+
+Might not be so good at streaming operations.  However, I believe that with an update, the script could make blocks of 1000 sequences at a time so that 1000 at a time could stream.
+
