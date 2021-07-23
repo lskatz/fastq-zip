@@ -44,8 +44,15 @@ sub decompressFastq{
     read(STDIN, my $idBlock, $idLength);
     read(STDIN, my $seqBlock, $seqLength);
     read(STDIN, my $qualBlock, $qualLength);
-    print ">$qualBlock<\n";
-    die;
+
+    my @id   = split(/\n/, $idBlock);
+    my @seq  = split(/\n/, $seqBlock);
+    my @qual = split(/\n/, $qualBlock);
+    my $numSeqs = @id;
+
+    for(my $i=0;$i<$numSeqs;$i++){
+      print "$id[$i]\n$seq[$i]\n+\n$qual[$i]\n";
+    }
   }
 }
 
